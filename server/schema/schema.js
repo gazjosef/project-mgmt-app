@@ -8,7 +8,7 @@ const {
   GraphQLList,
 } = require("graphql");
 
-// Client Type
+// *** CLIENT TYPE
 const ClientType = new GraphQLObjectType({
   name: "Client",
   fields: () => ({
