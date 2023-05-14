@@ -1,7 +1,7 @@
 {
   "name": "proejct-mgmt-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "GraphQL Crash Course With Full Stack MERN Project",
   "main": "index.js",
   "scripts": {
     "start": "node server/index.js",
