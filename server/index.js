@@ -3,9 +3,13 @@ const colors = require("colors");
 require("dotenv").config();
 const { graphqlHTTP } = require("express-graphql");
 const schema = require("./schema/schema");
+const connectDB = require("./config/db");
 const port = process.env.PORT || 5005;
 
 const app = express();
+
+// *** CONNECT TO DATABASE
+connectDB();
 
 app.use(
   "/graphql",
