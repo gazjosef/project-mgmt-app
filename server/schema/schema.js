@@ -11,6 +11,7 @@ const {
   GraphQLNonNull,
   GraphQLEnumType,
 } = require("graphql");
+const { graphqlHTTP } = require("express-graphql");
 
 // *** PROJECT TYPE
 const ProjectType = new GraphQLObjectType({
@@ -135,6 +136,15 @@ const mutation = new GraphQLObjectType({
       },
     },
     // *** DELETE A PROJECT
+    deleteProject: {
+      type: ProjectType,
+      args: {
+        id: { type: GraphQLNonNull(GraphQLID) },
+      },
+      resolve(parent, args) {
+        return Project.findByIdAndRemove(args.id);
+      },
+    },
   },
 });
 
