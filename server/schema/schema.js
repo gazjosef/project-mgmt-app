@@ -1,5 +1,3 @@
-const { projects, clients } = require("../sampleData.js");
-
 // *** MONGOOSE MODELS
 const Project = require("../models/Project.js");
 const Client = require("../models/Client.js");
@@ -25,7 +23,7 @@ const ProjectType = new GraphQLObjectType({
     client: {
       type: ClientType,
       resolve(parent, args) {
-        return clients.findById(parent.clientId);
+        return Client.findById(parent.clientId);
       },
     },
   }),
@@ -136,6 +134,7 @@ const mutation = new GraphQLObjectType({
         return project.save();
       },
     },
+    // *** DELETE A PROJECT
   },
 });
 
