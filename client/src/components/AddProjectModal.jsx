@@ -114,7 +114,6 @@ const AddProjectModal = () => {
                         <option value="completed">Completed</option>
                       </select>
                     </div>
-
                     <div className="mb-3">
                       <label htmlFor="form-label">Client</label>
                       <select
